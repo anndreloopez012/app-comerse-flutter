@@ -13,7 +13,7 @@ import 'package:customer_ecomerce/mainpage/main_page.dart';
 import 'package:dio/dio.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+//import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -23,7 +23,7 @@ import '../api/all_model/aaaloginmodel.dart';
 import 'forggot_pass.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -188,21 +188,21 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
   
-  fblogin() async {
-    final LoginResult result = await FacebookAuth.instance
-        .login(permissions: ['email', 'public_profile']);
+  //fblogin() async {
+  //  final LoginResult result = await FacebookAuth.instance
+  //      .login(permissions: ['email', 'public_profile']);
+//
+  //  if (result.status == LoginStatus.success) {
+  //    Map userdata = await FacebookAuth.instance.getUserData();
+//
+  //    fblogout();
+  //    registerwithfb(userdata["email"], userdata["name"], userdata["id"]);
+  //  } else {}
+  //}
 
-    if (result.status == LoginStatus.success) {
-      Map userdata = await FacebookAuth.instance.getUserData();
-
-      fblogout();
-      registerwithfb(userdata["email"], userdata["name"], userdata["id"]);
-    } else {}
-  }
-
-  fblogout() async {
-    await FacebookAuth.instance.logOut();
-  }
+  //fblogout() async {
+  //  await FacebookAuth.instance.logOut();
+  //}
 
   String user = "";
 
@@ -210,7 +210,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -314,7 +313,7 @@ class _LoginPageState extends State<LoginPage> {
                                 : Icons.visibility_off))),
                   ),
                   GestureDetector(
-                    onTap: () => Get.to(const ForgotPassword()),
+                    onTap: () => Get.to(() => const ForgotPassword()),
                     child: Container(
                       alignment: Alignment.topRight,
                       margin: const EdgeInsets.only(top: 8),
@@ -392,7 +391,7 @@ class _LoginPageState extends State<LoginPage> {
                                 color: GlobalData.whitecolor,
                                 borderRadius: GlobalRadious.radious_),
                             height: 7.h,
-                            width: 45.w,
+                            width: 93.w,
                             child: const Center(
                                 child: Padding(
                                     padding: EdgeInsets.all(8),
@@ -401,24 +400,24 @@ class _LoginPageState extends State<LoginPage> {
                                             icon_global.icgoogle)))),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            fblogin();
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: GlobalData.whitecolor,
-                                borderRadius: GlobalRadious.radious_),
-                            height: 7.h,
-                            width: 45.w,
-                            child: const Center(
-                                child: Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: Image(
-                                        image: AssetImage(
-                                            icon_global.icfacebooklogo)))),
-                          ),
-                        ),
+                        //GestureDetector(
+                        //  onTap: () {
+                        //    fblogin();
+                        //  },
+                        //  child: Container(
+                        //    decoration: BoxDecoration(
+                        //        color: GlobalData.whitecolor,
+                        //        borderRadius: GlobalRadious.radious_),
+                        //    height: 7.h,
+                        //    width: 45.w,
+                        //    child: const Center(
+                        //        child: Padding(
+                        //            padding: EdgeInsets.all(8),
+                        //            child: Image(
+                        //                image: AssetImage(
+                        //                    icon_global.icfacebooklogo)))),
+                        //  ),
+                        //),
                       ],
                     ),
                   ),
@@ -430,7 +429,7 @@ class _LoginPageState extends State<LoginPage> {
                           foregroundColor: GlobalData.fullwhite, elevation: 0,
                         ),
                         onPressed: () {
-                          Get.to(MainPages(0));
+                          Get.to(() => MainPages(0));
                         },
                         child: Text(
                           'Skip_Countinue'.tr,
@@ -453,7 +452,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 1.h,
                   ),
                   GestureDetector(
-                      onTap: () => Get.to(SignUp("login")),
+                      onTap: () => Get.to(() => SignUp("login")),
                       child: Center(
                         child: Text('SignUp'.tr,
                             style: TextStyle(

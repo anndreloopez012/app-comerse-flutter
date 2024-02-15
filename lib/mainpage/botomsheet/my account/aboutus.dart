@@ -12,7 +12,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../api/all_model/about_us_model.dart';
 
 class AboutUs extends StatefulWidget {
-  const AboutUs({Key? key}) : super(key: key);
+  const AboutUs({super.key});
 
   @override
   State<AboutUs> createState() => _AboutUsState();

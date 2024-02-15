@@ -92,7 +92,7 @@ class _OrderStripPayState extends State<OrderStripPay> {
           msg: "${addmoney!.message}",
           toastLength: Toast.LENGTH_SHORT,
         );
-        Get.to(() => const SucessFully());
+        Get.to(() => () => const SucessFully());
       } else {
         Fluttertoast.showToast(
           msg: "${addmoney!.message}",

@@ -483,7 +483,7 @@ class _ViewAllProductsState extends State<ViewAllProducts> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
+                  if (mode == RefreshStatus.refreshing) {
                     const Center(
                       child: Center(),
                     );
@@ -556,7 +556,7 @@ class _ViewAllProductsState extends State<ViewAllProducts> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                             onTap: () {
-                              Get.to(ProdutsDetails("${passengers[index].id!}",
+                              Get.to(() => ProdutsDetails("${passengers[index].id!}",
                                   passengers[index].productName!));
                             },
                             child: buildtrendingproductcell(

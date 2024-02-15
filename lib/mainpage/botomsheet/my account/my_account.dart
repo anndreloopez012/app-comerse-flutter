@@ -20,7 +20,7 @@ import 'aboutus.dart';
 import 'edit_profile.dart';
 
 class MyAccountPage extends StatefulWidget {
-  const MyAccountPage({Key? key}) : super(key: key);
+  const MyAccountPage({super.key});
 
   @override
   State<MyAccountPage> createState() => _MyAccountPageState();
@@ -66,7 +66,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                 onTap: () {
                   box.read("user_id") == null
                       ? Get.offAll(const LoginPage())
-                      : Get.to(EditProfile(
+                      : Get.to(() => EditProfile(
                           profile!.data!.name!.toString(),
                           profile!.data!.profilePic,
                           profile!.data!.mobile!,
@@ -77,12 +77,17 @@ class _MyAccountPageState extends State<MyAccountPage> {
                   margin: const EdgeInsets.all(6),
                   height: 30,
                   width: 30,
-                  child: SvgPicture.asset(
-                    icon_global.icedit,
-                    width: 24,
-                    color: themeModel.isdark.value
-                        ? GlobalData.fullblk
-                        : GlobalData.whitecolor,
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      themeModel.isdark.value
+                          ? GlobalData.fullblk
+                          : GlobalData.whitecolor,
+                      BlendMode.srcIn,
+                    ),
+                    child: SvgPicture.asset(
+                      icon_global.icedit,
+                      width: 24,
+                    ),
                   ),
                 ),
               )
@@ -158,28 +163,28 @@ class _MyAccountPageState extends State<MyAccountPage> {
                                   children: [
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(const SettingsPage());
+                                          Get.to(() => const SettingsPage());
                                         },
                                         child: buildlisttilecell(
                                             image: icon_global.icsetting,
                                             name: 'Settings'.tr)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(const PrivacyPolicy());
+                                          Get.to(() => const PrivacyPolicy());
                                         },
                                         child: buildlisttilecell(
                                             image: icon_global.icprivacy,
                                             name: 'PrivacyPolicy'.tr)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(const AboutUs());
+                                          Get.to(() => const AboutUs());
                                         },
                                         child: buildlisttilecell(
                                             image: icon_global.icabout,
                                             name: 'AboutUs'.tr)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(HelpContactPage(
+                                          Get.to(() => HelpContactPage(
                                               profile!.contactinfo!));
                                         },
                                         child: buildlisttilecell(
@@ -275,7 +280,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                             height: 2.w,
                           ),
                           Center(
-                            child: Text("@Gravityinfotech",
+                            child: Text("@customer_ecomerce",
                                 style: TextStyle(
                                     fontFamily: GlobalData.fontlistsemibold)),
                           ),
@@ -407,21 +412,21 @@ class _MyAccountPageState extends State<MyAccountPage> {
                                   onTap: () {
                                     box.read("user_id") == null
                                         ? Get.offAll(const LoginPage())
-                                        : Get.to(const SettingsPage());
+                                        : Get.to(() => const SettingsPage());
                                   },
                                   child: buildlisttilecell(
                                       image: icon_global.icsetting,
                                       name: 'Settings'.tr)),
                               GestureDetector(
                                   onTap: () {
-                                    Get.to(const PrivacyPolicy());
+                                    Get.to(() => const PrivacyPolicy());
                                   },
                                   child: buildlisttilecell(
                                       image: icon_global.icprivacy,
                                       name: 'PrivacyPolicy'.tr)),
                               GestureDetector(
                                   onTap: () {
-                                    Get.to(const AboutUs());
+                                    Get.to(() => const AboutUs());
                                   },
                                   child: buildlisttilecell(
                                       image: icon_global.icabout,
@@ -430,7 +435,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                                   onTap: () {
                                     box.read("user_id") == null
                                         ? Get.offAll(const LoginPage())
-                                        : Get.to(HelpContactPage(
+                                        : Get.to(() => HelpContactPage(
                                             profile!.contactinfo!));
                                   },
                                   child: buildlisttilecell(
@@ -443,7 +448,7 @@ class _MyAccountPageState extends State<MyAccountPage> {
                     ),
                     const Spacer(),
                     Center(
-                      child: Text("@Gravityinfotech",
+                      child: Text("@customer_ecomerce",
                           style: TextStyle(
                               fontFamily: GlobalData.fontlistsemibold)),
                     ),

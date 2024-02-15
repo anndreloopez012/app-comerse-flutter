@@ -7,7 +7,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../Config/global_data.dart';
 
 class ForgotPassword extends StatefulWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+  const ForgotPassword({super.key});
 
   @override
   State<ForgotPassword> createState() => _ForgotPasswordState();
@@ -24,7 +24,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
@@ -73,32 +72,36 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         controller: email,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                            border: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white38),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white38)),
-                            focusedBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white38),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                            hintText: 'Email'.tr,
-                            hintStyle: TextStyle(
-                                fontSize: 15.sp,
-                                fontFamily: GlobalData.fontlistregular),
-                            fillColor: themeModel.isdark.value
-                                ? GlobalData.whitecolor
-                                : GlobalData.fullblk,
-                            filled: true,
-                            focusColor: Colors.white),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white38),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white38),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white38),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          hintText: 'Email'.tr,
+                          hintStyle: TextStyle(
+                            fontSize: 15.sp,
+                            fontFamily: GlobalData.fontlistregular,
+                          ),
+                          fillColor: themeModel.isdark.value
+                              ? GlobalData.whitecolor
+                              : GlobalData.fullblk,
+                          filled: true,
+                          focusColor: Colors.white,
+                        ),
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 2.h),
                       decoration: BoxDecoration(
-                          color: GlobalData.bluebtn,
-                          borderRadius: const BorderRadius.all(Radius.circular(8))),
+                        color: GlobalData.bluebtn,
+                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      ),
                       height: 6.5.h,
                       child: Center(
                         child: Text('Submit'.tr,
@@ -118,16 +121,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       height: 1.h,
                     ),
                     GestureDetector(
-                        onTap: () => Get.to(SignUp("login")),
-                        child: Center(
-                          child: Text('SignUp'.tr,
-                              style: TextStyle(
-                                  fontSize: 17.sp,
-                                  fontFamily: GlobalData.fontlistmedium)),
-                        )),
+                      onTap: () => Get.to(() => SignUp("login")),
+                      child: Center(
+                        child: Text('SignUp'.tr,
+                            style: TextStyle(
+                                fontSize: 17.sp,
+                                fontFamily: GlobalData.fontlistmedium)),
+                      ),
+                    ),
                     SizedBox(
                       height: 3.h,
-                    )
+                    ),
                   ],
                 ),
               ),

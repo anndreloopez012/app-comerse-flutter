@@ -15,7 +15,7 @@ import '../../../api/all_model/search_model.dart';
 import '../../../coman_widget/widget_image.dart';
 
 class SerchePage extends StatefulWidget {
-  const SerchePage({Key? key}) : super(key: key);
+  const SerchePage({super.key});
 
   @override
   State<SerchePage> createState() => _SerchePageState();
@@ -138,7 +138,7 @@ class _SerchePageState extends State<SerchePage> {
                                 itemCount: _foundereusers.length,
                                 itemBuilder: (context, index) {
                                   return GestureDetector(
-                                    onTap: () => Get.to(ProdutsDetails(
+                                    onTap: () => Get.to(() => ProdutsDetails(
                                       "${_foundereusers[index].id!}",
                                       _foundereusers[index].productName!,
                                     )),

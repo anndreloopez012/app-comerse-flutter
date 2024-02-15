@@ -17,7 +17,7 @@ import '../../../../Config/thememodel.dart';
 import '../../../../api/all_model/paymnet_slect_model.dart';
 
 class AddMoneyPage extends StatefulWidget {
-  const AddMoneyPage({Key? key}) : super(key: key);
+  const AddMoneyPage({super.key});
 
   @override
   State<AddMoneyPage> createState() => _AddMoneyPageState();

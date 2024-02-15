@@ -91,7 +91,7 @@ class _OrderRazorPaymentState extends State<OrderRazorPayment> {
       'key': widget.tkey,
       'amount':double.parse(widget.amt!)*100 ,
       'name':"${widget.fname!} ${widget.lnsme!}",
-      'description': "E-Commerce",
+      'description': "DigiColmado",
       'prefill': {
         'contact':widget.mob!,
         'email': widget.mail!,
@@ -131,7 +131,7 @@ class _OrderRazorPaymentState extends State<OrderRazorPayment> {
       addmoney = success_or_no_model.fromJson(finallist);
       if (addmoney!.status==1) {
         Loader.showLoading();
-        Get.to(() => const SucessFully());
+        Get.to(() => () => const SucessFully());
       }
       else
       {

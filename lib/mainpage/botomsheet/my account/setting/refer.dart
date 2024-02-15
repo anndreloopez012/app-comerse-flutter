@@ -8,7 +8,7 @@ import 'package:share_plus/share_plus.dart';
 import '../../../../coman_widget/cman_widget_product.dart';
 
 class ReferEarn extends StatefulWidget {
-  const ReferEarn({Key? key}) : super(key: key);
+  const ReferEarn({super.key});
 
   @override
   State<ReferEarn> createState() => _ReferEarnState();

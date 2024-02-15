@@ -109,7 +109,7 @@ class _SelectPaymnetPageState extends State<SelectPaymnetPage> {
       var finallist = await response.data;
       success = success_or_no_model.fromJson(finallist);
       if (success!.status == 1) {
-        Get.to(() => const SucessFully());
+        Get.to(() => () => const SucessFully());
         // Navigator.pushAndRemoveUntil(
         //     context,
         //     MaterialPageRoute(

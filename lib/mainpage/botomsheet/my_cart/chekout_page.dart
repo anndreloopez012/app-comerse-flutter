@@ -82,7 +82,6 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     chekoutapi();
   }
@@ -123,7 +122,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                                 itemBuilder: (context, index) {
                                   return GestureDetector(
                                       onTap: () {
-                                        Get.to(ProdutsDetails(
+                                        Get.to(() => ProdutsDetails(
                                             chek!.cartdata![index].productId,
                                             chek!.cartdata![index]
                                                 .productName));
@@ -864,7 +863,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 if (widget.nam == null) {
                   Fluttertoast.showToast(msg: "select_your_aaddress".tr);
                 } else {
-                  Get.to(SelectPaymnetPage(
+                  Get.to(() => SelectPaymnetPage(
                     "${chek!.data!.grandTotal!}",
                     "${chek!.data!.discountAmount!}",
                     "${chek!.data!.vendorId!}",

@@ -116,48 +116,73 @@ class _HelpContactPageState extends State<HelpContactPage> {
                     ListTile(
                       minLeadingWidth: 0,
                       horizontalTitleGap: 4.w,
-                      leading: SvgPicture.asset(
-                        icon_global.iccall,
-                        width: 24,
-                        color: themeModel.isdark.value
-                            ? GlobalData.fullblk
-                            : GlobalData.whitecolor,
+                      leading: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value
+                              ? GlobalData.fullblk
+                              : GlobalData.whitecolor,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.iccall,
+                          width: 24,
+                        ),
                       ),
                       title: Text(widget.contact!.contact!,
                           style: TextStyle(
                               fontSize: 15.sp,
-                              fontFamily: GlobalData.fontlistmedium)),
+                              fontFamily: GlobalData.fontlistmedium,
+                              color: themeModel.isdark.value
+                                  ? GlobalData.fullblk
+                                  : GlobalData.whitecolor)),
                     ),
                     ListTile(
                       minLeadingWidth: 0,
                       horizontalTitleGap: 4.w,
-                      leading: SvgPicture.asset(
-                        icon_global.icaadre,
-                        width: 24,
-                        color: themeModel.isdark.value
-                            ? GlobalData.fullblk
-                            : GlobalData.whitecolor,
+                      leading: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value
+                              ? GlobalData.fullblk
+                              : GlobalData.whitecolor,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icaadre,
+                          width: 24,
+                        ),
                       ),
                       title: Text(widget.contact!.address!,
                           style: TextStyle(
                               fontSize: 15.sp,
-                              fontFamily: GlobalData.fontlistmedium)),
+                              fontFamily: GlobalData.fontlistmedium,
+                              color: themeModel.isdark.value
+                                  ? GlobalData.fullblk
+                                  : GlobalData.whitecolor)),
                     ),
-                    ListTile(
+                   ListTile(
                       minLeadingWidth: 0,
                       horizontalTitleGap: 4.w,
-                      leading: SvgPicture.asset(
-                        icon_global.icmail,
-                        width: 24,
-                        color: themeModel.isdark.value
-                            ? GlobalData.fullblk
-                            : GlobalData.whitecolor,
+                      leading: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value
+                              ? GlobalData.fullblk
+                              : GlobalData.whitecolor,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icmail,
+                          width: 24,
+                        ),
                       ),
                       title: Text(widget.contact!.email!,
                           style: TextStyle(
                               fontSize: 15.sp,
-                              fontFamily: GlobalData.fontlistmedium)),
+                              fontFamily: GlobalData.fontlistmedium,
+                              color: themeModel.isdark.value
+                                  ? GlobalData.fullblk
+                                  : GlobalData.whitecolor)),
                     ),
+
                     SizedBox(height: 1.h),
                     Text("Quick_Contact_Us".tr,
                         style: TextStyle(

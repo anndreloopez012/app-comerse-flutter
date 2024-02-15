@@ -153,14 +153,16 @@ class _CateViseProductsState extends State<CateViseProducts> {
           body: Container(
             margin: const EdgeInsets.only(right: 12, left: 12),
             child: SmartRefresher(
-                controller: refreshController,
-                primary: true,
-                header: CustomHeader(
-                  builder: (context, mode) {
-                    if (mode == LoadStatus.loading) {
-                      const CircularProgressIndicator();
-                    }
-                    return const Center();
+            controller: refreshController,
+            primary: true,
+            header: CustomHeader(
+              builder: (context, mode) {
+                if (mode == RefreshStatus.refreshing) {
+                  return Center(
+                    child: CircularProgressIndicator(color: GlobalData.bluebtn),
+                  );
+                }
+                return const Center();
                   },
                 ),
                 footer: CustomFooter(
@@ -208,7 +210,7 @@ class _CateViseProductsState extends State<CateViseProducts> {
                         itemBuilder: (context, index) {
                           return GestureDetector(
                               onTap: () {
-                                Get.to(ProdutsDetails(
+                                Get.to(() => ProdutsDetails(
                                     "${passengers[index].id!}",
                                     passengers[index].productName!));
                               },

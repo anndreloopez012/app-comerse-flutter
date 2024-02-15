@@ -17,7 +17,7 @@ import '../home_page/products_details.dart';
 import 'chekout_page.dart';
 
 class MyCartPage extends StatefulWidget {
-  const MyCartPage({Key? key}) : super(key: key);
+  const MyCartPage({super.key});
 
   @override
   State<MyCartPage> createState() => _MyCartPageState();
@@ -135,7 +135,7 @@ class _MyCartPageState extends State<MyCartPage> {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Get.to(ProdutsDetails(
+                                    Get.to(() => ProdutsDetails(
                                       cart!.data![index].productId!,
                                       cart!.data![index].productName!,
                                     ));
@@ -507,7 +507,7 @@ class _MyCartPageState extends State<MyCartPage> {
                       const Spacer(),
                       GestureDetector(
                         onTap: () {
-                          Get.to(CheckOutPage());
+                          Get.to(() => CheckOutPage());
                         },
                         child: Container(
                           decoration: BoxDecoration(color: GlobalData.bluebtn),

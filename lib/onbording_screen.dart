@@ -16,7 +16,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class OnBoarding extends StatefulWidget {
-  const OnBoarding({Key? key}) : super(key: key);
+  const OnBoarding({super.key});
 
   @override
   State<OnBoarding> createState() => _OnBoardingState();
@@ -46,7 +46,6 @@ class _OnBoardingState extends State<OnBoarding> {
 GetStorage box =GetStorage();
 @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
 

@@ -111,10 +111,9 @@ class _AllBrandsViewState extends State<AllBrandsView> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
-                    Center(
-                      child:
-                          CircularProgressIndicator(color: GlobalData.bluebtn),
+                  if (mode == RefreshStatus.refreshing) {
+                    return Center(
+                      child: CircularProgressIndicator(color: GlobalData.bluebtn),
                     );
                   }
                   return const Center();
@@ -166,7 +165,7 @@ class _AllBrandsViewState extends State<AllBrandsView> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            Get.to(VendorsPage(
+                            Get.to(() => VendorsPage(
                               2,
                               "${passengers[index].id}",
                               "${passengers[index].name}",

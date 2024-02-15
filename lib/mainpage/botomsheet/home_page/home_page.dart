@@ -27,7 +27,7 @@ import 'categories_menue.dart';
 import 'notification.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
             leadingWidth: 6.h,
             primary: true,
             leading: GestureDetector(
-              onTap: () => Get.to(const SerchePage()),
+              onTap: () => Get.to(() => const SerchePage()),
               child: Padding(
                   padding: EdgeInsets.only(left: 2.w, right: 2.w, top: 0.5.h),
                   child: Image(
@@ -173,8 +173,8 @@ class _HomePageState extends State<HomePage> {
                       },
                     ));
                   } else {
-                    Get.to(const NotificationPage());
-                    // Get.to(AddNewCardScreen());
+                    Get.to(() => const NotificationPage());
+                    // Get.to(() => AddNewCardScreen());
                   }
                 },
                 child: Padding(
@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                                                 GlobalData.fontlistsemibold)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(
+                                          Get.to(() => 
                                               CategoriesViewAll(cate!.data!));
                                         },
                                         child: Text("View_all".tr,
@@ -271,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
                                           onTap: () =>
-                                              Get.to(CategoriesMenuePage(
+                                              Get.to(() => CategoriesMenuePage(
                                             "${cate!.data![index].id!}",
                                             cate!.data![index].categoryName!,
                                           )),
@@ -355,7 +355,7 @@ class _HomePageState extends State<HomePage> {
                                                 GlobalData.fontlistsemibold)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(ViewAllProducts(1));
+                                          Get.to(() => () => ViewAllProducts(1));
                                         },
                                         child: Text("View_all".tr,
                                             style: TextStyle(
@@ -382,7 +382,7 @@ class _HomePageState extends State<HomePage> {
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
                                           onTap: () {
-                                            Get.to(ProdutsDetails(
+                                            Get.to(() => ProdutsDetails(
                                                 "${home!.featuredProducts![index].id!}",
                                                 home!.featuredProducts![index].productName!));
                                           },
@@ -476,7 +476,7 @@ class _HomePageState extends State<HomePage> {
                                     onTap: () {
                                       if (banner!.topbanner![index].type ==
                                           "category") {
-                                        Get.to(CategoriesMenuePage(
+                                        Get.to(() => CategoriesMenuePage(
                                           banner!.topbanner![index].catId!,
                                           banner!
                                               .topbanner![index].categoryName!,
@@ -484,7 +484,7 @@ class _HomePageState extends State<HomePage> {
                                       }
                                       if (banner!.topbanner![index].type ==
                                           "product") {
-                                        Get.to(ProdutsDetails(
+                                        Get.to(() => ProdutsDetails(
                                           banner!.topbanner![index].productId!,
                                           banner!
                                               .topbanner![index].categoryName!,
@@ -523,7 +523,7 @@ class _HomePageState extends State<HomePage> {
                                                 GlobalData.fontlistsemibold)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(const VendorsViewAllPage());
+                                          Get.to(() => const VendorsViewAllPage());
                                         },
                                         child: Text("View_all".tr,
                                             style: TextStyle(
@@ -549,7 +549,7 @@ class _HomePageState extends State<HomePage> {
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
                                           onTap: () {
-                                            Get.to(VendorsPage(
+                                            Get.to(() => VendorsPage(
                                               1,
                                               "${home!.vendors![index].id}",
                                               "${home!.vendors![index].name}",
@@ -653,7 +653,7 @@ class _HomePageState extends State<HomePage> {
                                                 GlobalData.fontlistsemibold)),
                                     GestureDetector(
                                         onTap: () {
-                                          Get.to(ViewAllProducts(2));
+                                          Get.to(() => ViewAllProducts(2));
                                         },
                                         child: Text("View_all".tr,
                                             style: TextStyle(
@@ -679,7 +679,7 @@ class _HomePageState extends State<HomePage> {
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
                                             onTap: () {
-                                              Get.to(ProdutsDetails(
+                                              Get.to(() => ProdutsDetails(
                                                 "${home!.newProducts![index].id}",
                                                 "${home!.newProducts![index].productName}",
                                               ));
@@ -784,7 +784,7 @@ class _HomePageState extends State<HomePage> {
                                     onTap: () {
                                       if (banner!.leftbanner![index].type ==
                                           "category") {
-                                        Get.to(CategoriesMenuePage(
+                                        Get.to(() => CategoriesMenuePage(
                                           banner!.leftbanner![index].catId!,
                                           banner!
                                               .leftbanner![index].categoryName!,
@@ -792,7 +792,7 @@ class _HomePageState extends State<HomePage> {
                                       } else if (banner!
                                               .leftbanner![index].type ==
                                           "product") {
-                                        Get.to(ProdutsDetails(
+                                        Get.to(() => ProdutsDetails(
                                           banner!.leftbanner![index].productId!,
                                           banner!
                                               .leftbanner![index].categoryName!,
@@ -831,7 +831,7 @@ class _HomePageState extends State<HomePage> {
                                     onTap: () {
                                       if (banner!.bottombanner![index].type ==
                                           "category") {
-                                        Get.to(CategoriesMenuePage(
+                                        Get.to(() => CategoriesMenuePage(
                                           banner!.bottombanner![index].catId!,
                                           banner!.bottombanner![index]
                                               .categoryName!,
@@ -839,7 +839,7 @@ class _HomePageState extends State<HomePage> {
                                       } else if (banner!
                                               .bottombanner![index].type ==
                                           "product") {
-                                        Get.to(ProdutsDetails(
+                                        Get.to(() => ProdutsDetails(
                                           banner!
                                               .bottombanner![index].productId!,
                                           banner!.bottombanner![index]
@@ -877,7 +877,7 @@ class _HomePageState extends State<HomePage> {
                                             GlobalData.fontlistsemibold)),
                                 GestureDetector(
                                     onTap: () {
-                                      Get.to(const AllBrandsView());
+                                      Get.to(() => const AllBrandsView());
                                     },
                                     child: Text("View_all".tr,
                                         style: TextStyle(
@@ -903,7 +903,7 @@ class _HomePageState extends State<HomePage> {
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
                                       onTap: () {
-                                        Get.to(VendorsPage(
+                                        Get.to(() => VendorsPage(
                                           2,
                                           "${home!.brands![index].id}",
                                           "${home!.brands![index].brandName}",
@@ -962,7 +962,7 @@ class _HomePageState extends State<HomePage> {
                                             GlobalData.fontlistsemibold)),
                                 GestureDetector(
                                     onTap: () {
-                                      Get.to(ViewAllProducts(3));
+                                      Get.to(() => ViewAllProducts(3));
                                     },
                                     child: Text("View_all".tr,
                                         style: TextStyle(
@@ -988,7 +988,7 @@ class _HomePageState extends State<HomePage> {
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
                                         onTap: () {
-                                          Get.to(ProdutsDetails(
+                                          Get.to(() => ProdutsDetails(
                                             "${home!.hotProducts![index].id}",
                                             "${home!.hotProducts![index].productName}",
                                           ));
@@ -1087,13 +1087,13 @@ class _HomePageState extends State<HomePage> {
                               onTap: () {
                                 if (banner!.largebanner![index].type ==
                                     "category") {
-                                  Get.to(CategoriesMenuePage(
+                                  Get.to(() => CategoriesMenuePage(
                                     banner!.largebanner![index].catId!,
                                     banner!.largebanner![index].categoryName!,
                                   ));
                                 } else if (banner!.largebanner![index].type ==
                                     "product") {
-                                  Get.to(ProdutsDetails(
+                                  Get.to(() => ProdutsDetails(
                                     banner!.largebanner![index].productId!,
                                     banner!.largebanner![index].categoryName!,
                                   ));

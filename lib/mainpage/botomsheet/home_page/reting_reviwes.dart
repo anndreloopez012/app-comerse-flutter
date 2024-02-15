@@ -350,7 +350,7 @@ class _retingreviewsState extends State<retingreviews> {
                                       primary: true,
                                       header: CustomHeader(
                                         builder: (context, mode) {
-                                          if (mode == LoadStatus.loading) {
+                                        if (mode == RefreshStatus.refreshing) {
                                             const Center(
                                               child: Center(),
                                             );

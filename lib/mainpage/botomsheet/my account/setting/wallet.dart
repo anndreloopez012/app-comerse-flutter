@@ -14,7 +14,7 @@ import '../../../../api/all_model/walet_model.dart';
 import '../../../../coman_widget/cman_widget_product.dart';
 
 class WalletPage extends StatefulWidget {
-  const WalletPage({Key? key}) : super(key: key);
+  const WalletPage({super.key});
 
   @override
   State<WalletPage> createState() => _WalletPageState();
@@ -294,7 +294,7 @@ class _WalletPageState extends State<WalletPage> {
                       primary: true,
                       header: CustomHeader(
                         builder: (context, mode) {
-                          if (mode == LoadStatus.loading) {
+                        if (mode == RefreshStatus.refreshing) {
                             const Center(
                               child: Center(),
                             );
@@ -533,7 +533,7 @@ class _WalletPageState extends State<WalletPage> {
             elevation: 0,
             backgroundColor: Colors.black,
             onPressed: () {
-              Get.to(const AddMoneyPage());
+              Get.to(() => const AddMoneyPage());
             },
             child: Center(
                 child: Text(

@@ -99,7 +99,7 @@ class _OrderFlutterWaveState extends State<OrderFlutterWave> {
         var finallist = await response.data;
         addmoney = success_or_no_model.fromJson(finallist);
         if (addmoney!.status == 1) {
-          Get.to(() => const SucessFully());
+          Get.to(() => () => const SucessFully());
         } else {}
       }
     } else {

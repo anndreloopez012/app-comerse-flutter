@@ -51,7 +51,7 @@ class _CategoriesViewAllState extends State<CategoriesViewAll> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          Get.to(CategoriesMenuePage(
+                          Get.to(() => CategoriesMenuePage(
                               "${widget.category![index].id!}",
                               widget.category![index].categoryName!));
                         },

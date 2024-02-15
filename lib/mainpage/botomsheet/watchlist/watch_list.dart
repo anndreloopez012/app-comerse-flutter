@@ -18,7 +18,7 @@ import '../../../login/login_page.dart';
 import '../home_page/products_details.dart';
 
 class WatchListPage extends StatefulWidget {
-  const WatchListPage({Key? key}) : super(key: key);
+  const WatchListPage({super.key});
 
   @override
   State<WatchListPage> createState() => _WatchListPageState();
@@ -126,7 +126,7 @@ class _WatchListPageState extends State<WatchListPage> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
+                if (mode == RefreshStatus.refreshing) {
                     const Center(
                       child: Center(),
                     );
@@ -178,7 +178,7 @@ class _WatchListPageState extends State<WatchListPage> {
                         final passenger = passengers[index];
                         return GestureDetector(
                             onTap: () {
-                              Get.to(ProdutsDetails("${passenger.id!}",
+                              Get.to(() => ProdutsDetails("${passenger.id!}",
                                   passenger.productName!));
                             },
                             child: buildtrendingproductcell(

@@ -10,7 +10,7 @@ import '../../Config/global_data.dart';
 
 // ignore: camel_case_types
 class VendoreSignUp extends StatefulWidget {
-  const VendoreSignUp({Key? key}) : super(key: key);
+  const VendoreSignUp({super.key});
 
   @override
   State<VendoreSignUp> createState() => _VendoreSignUpState();

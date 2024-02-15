@@ -12,7 +12,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../api/all_model/about_us_model.dart';
 
 class PrivacyPolicy extends StatefulWidget {
-  const PrivacyPolicy({Key? key}) : super(key: key);
+  const PrivacyPolicy({super.key});
 
   @override
   State<PrivacyPolicy> createState() => _PrivacyPolicyState();

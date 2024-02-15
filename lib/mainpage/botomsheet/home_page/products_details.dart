@@ -661,7 +661,7 @@ class _ProdutsDetailsState extends State<ProdutsDetails> {
                                 )),
                             GestureDetector(
                                 onTap: () {
-                                  Get.to(DescriptionPage(
+                                  Get.to(() => DescriptionPage(
                                       produt!.data!.description!));
                                 },
                                 child: buildlisttilecell(
@@ -675,7 +675,7 @@ class _ProdutsDetailsState extends State<ProdutsDetails> {
                                     : GlobalData.fullwhite),
                             GestureDetector(
                                 onTap: () {
-                                  Get.to(
+                                  Get.to(() => 
                                       retingreviews("${produt!.data!.id!}"));
                                 },
                                 child: buildlisttilecell(
@@ -690,7 +690,7 @@ class _ProdutsDetailsState extends State<ProdutsDetails> {
                             if (produt!.data!.isReturn == "1") ...{
                               GestureDetector(
                                   onTap: () {
-                                    Get.to(ReaturnPolicy(
+                                    Get.to(() => ReaturnPolicy(
                                         produt!.returnpolicy!.returnPolicies!));
                                   },
                                   child: buildlisttilecell(
@@ -784,7 +784,7 @@ class _ProdutsDetailsState extends State<ProdutsDetails> {
                                                   ),
                                                   const Spacer(),
                                                   GestureDetector(
-                                                    onTap: () => Get.to(VendorsPage(
+                                                    onTap: () => Get.to(() => VendorsPage(
                                                         1,
                                                         "${produt!.vendors!.id}",
                                                         "${produt!.vendors!.name}",

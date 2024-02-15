@@ -136,12 +136,19 @@ Widget buildlisttilecell(
         minLeadingWidth: 0,
         horizontalTitleGap: 4.w,
         leading: widd ??
-            SvgPicture.asset(image!,
-                width: 24,
-                color: themeModel.isdark.value
-                    ? GlobalData.fullblk
-                    : GlobalData.whitecolor,
-                fit: BoxFit.fill),
+        ColorFiltered(
+          colorFilter: ColorFilter.mode(
+            themeModel.isdark.value
+                ? GlobalData.fullblk
+                : GlobalData.whitecolor,
+            BlendMode.srcIn,
+          ),
+          child: SvgPicture.asset(
+            image!,
+            width: 24,
+            fit: BoxFit.fill,
+          ),
+        ),
         title: Text(name,
             style: TextStyle(
                 fontSize: 16.sp,

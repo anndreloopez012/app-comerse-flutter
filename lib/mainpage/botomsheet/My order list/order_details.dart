@@ -432,13 +432,13 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                                                                     order!.orderData![index]
                                                                             .status ==
                                                                         "4") {
-                                                                  Get.to(TrackOrder(order!
+                                                                  Get.to(() => TrackOrder(order!
                                                                       .orderData![
                                                                           index]
                                                                       .id!
                                                                       .toString()));
                                                                 } else {
-                                                                  Get.to(TrackOrder(order!
+                                                                  Get.to(() => TrackOrder(order!
                                                                       .orderData![
                                                                           index]
                                                                       .productId!));
@@ -493,7 +493,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                                                                   GestureDetector(
                                                                     onTap:
                                                                         () async {
-                                                                      Get.to(ReturnRequest(order!
+                                                                      Get.to(() => ReturnRequest(order!
                                                                           .orderData![
                                                                               index]
                                                                           .id!

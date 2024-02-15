@@ -68,7 +68,7 @@ class _WalletRazorPayState extends State<WalletRazorPay> {
       'key': widget.tkey,
       'amount':double.parse(widget.amt!)*100 ,
       'name':box.read("u_name"),
-      'description': "E-Commerce",
+      'description': "DigiColmado",
       'prefill': {
         'contact':box.read("u_mobile"),
         'email': box.read("u_mail"),

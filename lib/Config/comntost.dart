@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class Loader {
   // show error; Dialog
   static void showErroDialog(
-      {String title = 'E-Commerce',
+      {String title = 'DigiColmado',
         String? description = 'Something went wrong'}) {
     Get.dialog(
       Dialog(

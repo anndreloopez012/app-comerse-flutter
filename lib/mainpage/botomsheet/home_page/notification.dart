@@ -16,7 +16,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../coman_widget/widget_image.dart';
 
 class NotificationPage extends StatefulWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+  const NotificationPage({super.key});
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();
@@ -98,16 +98,16 @@ class _NotificationPageState extends State<NotificationPage> {
           body: Container(
             margin: const EdgeInsets.only(right: 12, left: 12),
             child: SmartRefresher(
-                controller: refreshController,
-                primary: true,
-                header: CustomHeader(
-                  builder: (context, mode) {
-                    if (mode == LoadStatus.loading) {
-                      const Center(
-                        child: Center(),
-                      );
-                    }
-                    return const Center();
+            controller: refreshController,
+            primary: true,
+            header: CustomHeader(
+              builder: (context, mode) {
+                if (mode == RefreshStatus.refreshing) {
+                  return Center(
+                    child: CircularProgressIndicator(color: GlobalData.bluebtn),
+                  );
+                }
+                return const Center();
                   },
                 ),
                 footer: CustomFooter(
@@ -155,14 +155,14 @@ class _NotificationPageState extends State<NotificationPage> {
                                   passengers[index].orderStatus == "8" ||
                                   passengers[index].orderStatus == "9" ||
                                   passengers[index].orderStatus == "10") {
-                                Get.to(ReaturnTrackOrder(
+                                Get.to(() => ReaturnTrackOrder(
                                     passengers[index].orderId!));
                               } else if (passengers[index].orderStatus == "2" ||
                                   passengers[index].orderStatus == "3" ||
                                   passengers[index].orderStatus == "4") {
-                                Get.to(TrackOrder(passengers[index].orderId!));
+                                Get.to(() => TrackOrder(passengers[index].orderId!));
                               } else {
-                                Get.to(OrderDetailsPage(
+                                Get.to(() => OrderDetailsPage(
                                     passengers[index].orderNumber!));
                               }
                             },

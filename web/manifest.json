@@ -1,6 +1,6 @@
 {
-    "name": "customer_ecomerce",
-    "short_name": "customer_ecomerce",
+    "name": "app_comerse_flutter",
+    "short_name": "app_comerse_flutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

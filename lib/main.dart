@@ -96,7 +96,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   fire() async {
-    MyApp.tokke = await FirebaseMessaging.instance.getToken();
+    MyApp.tokke = 'AIzaSyAFQGw7GsW6Fz_OcsEjZIDOgcbaCMKB41o';
+    //MyApp.tokke = await FirebaseMessaging.instance.getToken();
+
   }
 
   @override
@@ -109,9 +111,9 @@ class _MyAppState extends State<MyApp> {
                 ? ThemeModel.themeDataLight
                 : ThemeModel.themeDataDark,
             debugShowCheckedModeBanner: false,
-            locale: const Locale('en', 'US'),
+            locale: const Locale('es', 'RP'),
             translations: LocaleString(),
-            fallbackLocale: const Locale('ar', 'ab'),
+            fallbackLocale: const Locale('en', 'US'),
             scrollBehavior: MyBehavior(),
             home: MyApp.bord == 1 ? const OnBoarding() : const SplashScreen()));
       },

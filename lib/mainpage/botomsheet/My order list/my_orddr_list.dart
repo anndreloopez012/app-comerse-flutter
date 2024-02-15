@@ -15,7 +15,7 @@ import '../../../coman_widget/widget_image.dart';
 import 'order_details.dart';
 
 class MyOrderList extends StatefulWidget {
-  const MyOrderList({Key? key}) : super(key: key);
+  const MyOrderList({super.key});
 
   @override
   State<MyOrderList> createState() => _MyOrderListState();
@@ -98,7 +98,7 @@ class _MyOrderListState extends State<MyOrderList> {
                 primary: true,
                 header: CustomHeader(
                   builder: (context, mode) {
-                    if (mode == LoadStatus.loading) {
+                  if (mode == RefreshStatus.refreshing) {
                       const Center(
                         child: Center(),
                       );

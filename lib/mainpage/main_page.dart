@@ -120,7 +120,6 @@ class _MainPagesState extends State<MainPages> {
           notification.body,
           NotificationDetails(
               android: AndroidNotificationDetails(
-                icon: '@drawable/e_com',
                 channel.id,
                 channel.name,
               ),
@@ -135,8 +134,8 @@ class _MainPagesState extends State<MainPages> {
         RemoteNotification? notification = message.notification;
         AndroidNotification? android = message.notification?.android;
         if (notification != null && android != null) {
-          Get.to(() => OrderDetailsPage("171"));
-          Loader.showErroDialog(description: "sfggfgdfdsd");
+          Get.to(() => () => OrderDetailsPage("171"));
+          Loader.showErroDialog(description: "error; '                  ' ");
           showDialog(
             context: context,
             builder: (context) {
@@ -159,110 +158,143 @@ class _MainPagesState extends State<MainPages> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _onWillPop,
-      child: GetBuilder<ThemeModel>(builder: (context) {
+  return WillPopScope(
+    onWillPop: () async => await _onWillPop(),
+    child: GetBuilder<ThemeModel>(
+      builder: (context) {
         return SafeArea(
           child: Scaffold(
-              body: pages[widget.ind!],
-              bottomNavigationBar: GetBuilder<ThemeModel>(
-                builder: (controller) {
-                  return BottomNavigationBar(
-                    elevation: 0,
-                    items: <BottomNavigationBarItem>[
-                      BottomNavigationBarItem(
-                        icon: SvgPicture.asset(
+            body: pages[widget.ind!],
+            bottomNavigationBar: GetBuilder<ThemeModel>(
+              builder: (controller) {
+                return BottomNavigationBar(
+                  elevation: 0,
+                  items: <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.darkgray : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
                           icon_global.ichome,
-                          color: themeModel.isdark.value
-                              ? GlobalData.darkgray
-                              : GlobalData.fullwhite,
                         ),
-                        label: '',
-                        activeIcon: SvgPicture.asset(
+                      ),
+                      label: '',
+                      activeIcon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.fullblk : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
                           icon_global.ichome,
-                          color: themeModel.isdark.value
-                              ? GlobalData.fullblk
-                              : GlobalData.fullwhite,
                         ),
                       ),
-                      BottomNavigationBarItem(
-                        icon: SvgPicture.asset(
-                          icon_global.icheartmenu,
-                          color: themeModel.isdark.value
-                              ? GlobalData.darkgray
-                              : GlobalData.fullwhite,
-                        ),
-                        label: '',
-                        activeIcon: SvgPicture.asset(
-                          icon_global.icheartmenu,
-                          color: themeModel.isdark.value
-                              ? GlobalData.fullblk
-                              : GlobalData.fullwhite,
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        icon: SvgPicture.asset(
-                          icon_global.iccart,
-                          color: themeModel.isdark.value
-                              ? GlobalData.darkgray
-                              : GlobalData.fullwhite,
-                        ),
-                        label: '',
-                        activeIcon: SvgPicture.asset(
-                          icon_global.iccart,
-                          color: themeModel.isdark.value
-                              ? GlobalData.fullblk
-                              : GlobalData.fullwhite,
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        icon: SvgPicture.asset(
-                          icon_global.icfile,
-                          color: themeModel.isdark.value
-                              ? GlobalData.darkgray
-                              : GlobalData.fullwhite,
-                        ),
-                        label: '',
-                        activeIcon: SvgPicture.asset(
-                          icon_global.icfile,
-                          color: themeModel.isdark.value
-                              ? GlobalData.fullblk
-                              : GlobalData.fullwhite,
-                        ),
-                      ),
-                      BottomNavigationBarItem(
-                        icon: SvgPicture.asset(
-                          icon_global.icman,
-                          color: themeModel.isdark.value
-                              ? GlobalData.darkgray
-                              : GlobalData.fullwhite,
-                        ),
-                        label: '',
-                        activeIcon: SvgPicture.asset(
-                          icon_global.icman,
-                          color: themeModel.isdark.value
-                              ? GlobalData.fullblk
-                              : GlobalData.fullwhite,
-                        ),
-                      ),
-                    ],
-                    currentIndex: widget.ind!,
-                    type: BottomNavigationBarType.fixed,
-                    unselectedIconTheme: const IconThemeData(
-                      size: 25,
                     ),
-                    selectedIconTheme: const IconThemeData(
-                      size: 25,
+                    BottomNavigationBarItem(
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.darkgray : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icheartmenu,
+                        ),
+                      ),
+                      label: '',
+                      activeIcon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.fullblk : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icheartmenu,
+                        ),
+                      ),
                     ),
-                    onTap: opTapped,
-                    showUnselectedLabels: false,
-                    selectedFontSize: 0,
-                    unselectedFontSize: 0,
-                  );
-                },
-              )),
+                    BottomNavigationBarItem(
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.darkgray : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.iccart,
+                        ),
+                      ),
+                      label: '',
+                      activeIcon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.fullblk : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.iccart,
+                        ),
+                      ),
+                    ),
+                    BottomNavigationBarItem(
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.darkgray : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icfile,
+                        ),
+                      ),
+                      label: '',
+                      activeIcon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.fullblk : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icfile,
+                        ),
+                      ),
+                    ),
+                    BottomNavigationBarItem(
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.darkgray : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icman,
+                        ),
+                      ),
+                      label: '',
+                      activeIcon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          themeModel.isdark.value ? GlobalData.fullblk : GlobalData.fullwhite,
+                          BlendMode.srcIn,
+                        ),
+                        child: SvgPicture.asset(
+                          icon_global.icman,
+                        ),
+                      ),
+                    ),
+                  ],
+                  currentIndex: widget.ind!,
+                  type: BottomNavigationBarType.fixed,
+                  unselectedIconTheme: const IconThemeData(
+                    size: 25,
+                  ),
+                  selectedIconTheme: const IconThemeData(
+                    size: 25,
+                  ),
+                  onTap: opTapped,
+                  showUnselectedLabels: false,
+                  selectedFontSize: 0,
+                  unselectedFontSize: 0,
+                );
+              },
+            ),
+          ),
         );
-      }),
-    );
-  }
+      },
+    ),
+  );
+}
 }

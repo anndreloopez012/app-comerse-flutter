@@ -78,27 +78,27 @@ class _SettingsPageState extends State<SettingsPage> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            Get.to(const ChangePassword());
+                            Get.to(() => const ChangePassword());
                           },
                           child: buildlisttilecell(
                               image: icon_global.icchangepass,
                               name: 'ChangePassword'.tr)),
                       GestureDetector(
                           onTap: () {
-                            Get.to(const WalletPage());
+                            Get.to(() => const WalletPage());
                           },
                           child: buildlisttilecell(
                               image: icon_global.icwallet,
                               name: 'My_Wallet'.tr)),
                       GestureDetector(
                           onTap: () {
-                            Get.to(const OfferPage());
+                            Get.to(() => const OfferPage());
                           },
                           child: buildlisttilecell(
                               image: icon_global.icoffer, name: 'Offers'.tr)),
                       GestureDetector(
                           onTap: () {
-                            Get.to(MyAdressPage());
+                            Get.to(() => MyAdressPage());
                           },
                           child: buildlisttilecell(
                               image: icon_global.icaadre,
@@ -129,7 +129,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       ),
                       GestureDetector(
                           onTap: () {
-                            Get.to(const ReferEarn());
+                            Get.to(() => const ReferEarn());
                           },
                           child: buildlisttilecell(
                               image: icon_global.icrefer,

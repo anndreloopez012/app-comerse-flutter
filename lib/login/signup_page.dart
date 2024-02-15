@@ -138,7 +138,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     if (widget.type == "google") {
       fname.text = widget.gname!.toString();
@@ -457,7 +456,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(const VendoreSignUp());
+                      Get.to(() => const VendoreSignUp());
                     },
                     child: Center(
                       widthFactor: double.infinity,
@@ -480,7 +479,7 @@ class _SignUpState extends State<SignUp> {
                     height: 3.h,
                   ),
                   GestureDetector(
-                      onTap: () => Get.to(const LoginPage()),
+                      onTap: () => Get.to(() => const LoginPage()),
                       child: Center(
                         child: Text('Login'.tr,
                             style: TextStyle(

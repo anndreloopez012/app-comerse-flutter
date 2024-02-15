@@ -425,7 +425,7 @@ class _TrackOrderState extends State<TrackOrder> {
                          {
                            GestureDetector(
                              onTap: () {
-                               Get.to(WriteReview(
+                               Get.to(() => WriteReview(
                                  track!.orderInfo!.imageUrl!,
                                  track!.orderInfo!.productName!,
                                  track!.orderInfo!.vendorId!,

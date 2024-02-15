@@ -14,7 +14,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../../../api/all_model/offer_model.dart';
 
 class OfferPage extends StatefulWidget {
-  const OfferPage({Key? key}) : super(key: key);
+  const OfferPage({super.key});
 
   @override
   State<OfferPage> createState() => _OfferPageState();
@@ -109,7 +109,7 @@ class _OfferPageState extends State<OfferPage> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
+                  if (mode == RefreshStatus.refreshing) {
                     const Center(
                       child: Center(),
                     );

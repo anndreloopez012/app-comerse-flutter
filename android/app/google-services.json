@@ -7,54 +7,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:959338980973:android:55888c6f9b1572b688fd42",
+        "mobilesdk_app_id": "1:959338980973:android:1283c82d7e8ad0e7798164",
         "android_client_info": {
           "package_name": "com.digicolmadotest.user"
         }
       },
       "oauth_client": [
         {
-          "client_id": "959338980973-6307s123jf9bdsihrrjcgubp1agn59sl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digicolmadotest.user",
-            "certificate_hash": "fb2171f17be5cbdb66575d77bcfa715fe62c1260"
-          }
-        },
-        {
-          "client_id": "959338980973-e6t6t0ga1shg3gfj44omk26a3s1vs20h.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digicolmadotest.user",
-            "certificate_hash": "3f8f3488f81ced69e51f651c58ae3a8dfce015c7"
-          }
-        },
-        {
-          "client_id": "959338980973-h8nv45m9id919mnnl75kvabj9ro5olc1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digicolmadotest.user",
-            "certificate_hash": "75637abfa4795ed04be7a2fe89a3f1d6b037b52c"
-          }
-        },
-        {
-          "client_id": "959338980973-q3dk1f9f08itk9jciakb471r3je2aq5o.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digicolmadotest.user",
-            "certificate_hash": "79dea641939ac34bb314b6a9dd3f3331475e922a"
-          }
-        },
-        {
-          "client_id": "959338980973-v0jg0ifen65kebfnjqg0eg4ascef1fq4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.digicolmadotest.user",
-            "certificate_hash": "7f781821a9c4421fa72147b3b461d686f0674831"
-          }
-        },
-        {
-          "client_id": "959338980973-u0ptpr23voh4vqu36acj5pof4pl5670o.apps.googleusercontent.com",
+          "client_id": "959338980973-ac1l5rquadjgh6ke9qtsr69pim5lhtl6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -67,15 +27,8 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "959338980973-j69qp9qq7ps355fcb23085jo532p7ckd.apps.googleusercontent.com",
+              "client_id": "959338980973-ac1l5rquadjgh6ke9qtsr69pim5lhtl6.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "959338980973-gkil3q9cakmevpuqktp3a82cgbe6gh27.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.digicolmadotest.user"
-              }
             }
           ]
         }

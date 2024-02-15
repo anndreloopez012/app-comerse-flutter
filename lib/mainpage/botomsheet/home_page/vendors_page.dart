@@ -180,7 +180,7 @@ class _VendorsPageState extends State<VendorsPage> {
               if (widget.type == 1) ...{
                 GestureDetector(
                   onTap: () {
-                    Get.to(AboutVendor(
+                    Get.to(() => AboutVendor(
                         vendor!.vendordetails!, widget.name, widget.imaage));
                   },
                   child: Container(
@@ -200,7 +200,7 @@ class _VendorsPageState extends State<VendorsPage> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
+                if (mode == RefreshStatus.refreshing) {
                     Center(
                       child:
                           CircularProgressIndicator(color: GlobalData.bluebtn),
@@ -254,7 +254,7 @@ class _VendorsPageState extends State<VendorsPage> {
                         return passengers.isNotEmpty
                             ? GestureDetector(
                                 onTap: () {
-                                  Get.to(ProdutsDetails(
+                                  Get.to(() => ProdutsDetails(
                                       "${passengers[index].id}",
                                       "${passengers[index].productName}"));
                                 },

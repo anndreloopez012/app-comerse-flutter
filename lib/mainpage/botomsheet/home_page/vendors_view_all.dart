@@ -113,7 +113,7 @@ class _VendorsViewAllPageState extends State<VendorsViewAllPage> {
               primary: true,
               header: CustomHeader(
                 builder: (context, mode) {
-                  if (mode == LoadStatus.loading) {
+                  if (mode == RefreshStatus.refreshing) {
                     Center(
                       child:
                           CircularProgressIndicator(color: GlobalData.bluebtn),
@@ -163,7 +163,7 @@ class _VendorsViewAllPageState extends State<VendorsViewAllPage> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            Get.to(VendorsPage(
+                            Get.to(() => VendorsPage(
                               1,
                               "${passengers[index].id}",
                               "${passengers[index].name}",
